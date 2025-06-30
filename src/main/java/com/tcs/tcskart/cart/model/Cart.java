@@ -44,6 +44,13 @@ public class Cart {
 		this.totalPrice = totalPrice;
 	}
 	
+	public void updateTotalPrice() {
+		Double priceSum = 0.0;
+		for(CartItem cartItem : cartItems) {
+			priceSum += cartItem.getPrice();
+		}
+		this.totalPrice = priceSum;
+	}
 	
 	
 }

@@ -7,14 +7,12 @@ import com.tcs.tcskart.cart.model.CartItem;
 
 public interface CartServiceInterface {
 	
-	public CartItem getCartItemByCartId(Long cartId);
-	
 	public Cart getCartByUserId(Long userId) throws NoCartItemException;
 	
-	public Boolean addProductToUserCart(Long productId, Long userId);
+	public Boolean addProductToUserCart(Long userId, Long productId, Integer quantity);
 	
-	public Boolean deleteCartItemByItemId(Long cardId);
+	public Boolean deleteCartItemByProductId(Long userId, Long productId, Integer quantity) throws Exception;
 	
-	public Boolean deleteAllCartItemOfUserId(Long userId);
+	public Boolean deleteAllCartItemOfUserId(Long userId) throws Exception;
 	
 }
