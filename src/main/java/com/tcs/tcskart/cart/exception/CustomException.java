@@ -13,4 +13,9 @@ public class CustomException {
 		return new ResponseEntity<>("There is no product in cart.",HttpStatus.NOT_FOUND);
 	}
 	
+	@ExceptionHandler(value = ProductNotPresentInCartException.class)
+	public ResponseEntity<Object> exception(ProductNotPresentInCartException exception){
+		return new ResponseEntity<>("This product is not present in cart.",HttpStatus.NOT_FOUND);
+	}
+	
 }

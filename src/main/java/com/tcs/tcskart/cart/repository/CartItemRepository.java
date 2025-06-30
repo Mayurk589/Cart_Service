@@ -10,7 +10,13 @@ import com.tcs.tcskart.cart.model.CartItem;
 
 @Repository
 public interface CartItemRepository extends JpaRepository<CartItem, Long> {
+	
 	public List<CartItem> findAllByUserId(Long userId);
 
 	public Optional<CartItem> findByProductIdAndUserId(Long productId, Long userId);
+
+	public void deleteAllByUserId(Long userId);
+
+	public boolean existsByUserId(Long userId);
+
 }

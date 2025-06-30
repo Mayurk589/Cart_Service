@@ -30,16 +30,22 @@ public class CartItem {
 	
 	private Long productId;
 	
+	private String productName;
+	
+	private String imgUrl;
+	
 	private Integer quantity;
 	
 	private Double price;
 	
 	private LocalDateTime addedAt;
 
-	public CartItem(Long cartId, Long userId, Long productId, Integer quantity, Double price) {
+	public CartItem(Long cartId, Long userId, Long productId,String productName, String imgUrl, Integer quantity, Double price) {
 		this.cartId = cartId;
 		this.userId = userId;
 		this.productId = productId;
+		this.productName = productName;
+		this.imgUrl = imgUrl;
 		this.quantity = quantity;
 		this.price = price;
 		this.addedAt = LocalDateTime.now();
